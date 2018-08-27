@@ -1,0 +1,111 @@
+<aura:component controller="tek_AccountListApexController"  access="global" >
+	
+    <!-- COMMON ATTRIBUTES -->
+    <aura:attribute name="Accounts" type="List" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="targetAccount" type="account"/>
+	<aura:attribute name="orgName" type="string"/>
+    <aura:attribute name="error" type="string" default=""/>
+     
+    <!-- STARTUP EVENT HANDLER -->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    
+    
+	<div class="slds-box slds-theme--default slds-container bottom-gutter" style="width: 1100px">
+
+        <!-- HEADER -->
+        <legend id="accountslist" class="slds-text-heading--large slds-p-vertical--medium">
+            <lightning:icon size="large" iconName="standard:account" alternativeText="Accounts"/>
+            &nbsp;Last 10 Accounts Created
+        </legend>
+
+        <!-- GRID -->
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+          <thead>
+            <tr class="slds-text-title_caps">
+              <th scope="col">
+                <div class="slds-truncate" title="ID">ID</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Name">Name</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Phone">Phone</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Type">Type</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+			<aura:iteration items="{!v.Accounts}" var="account">
+                <tr>
+                  <th scope="row">
+                      <div class="slds-truncate" title="{!account.Id}">{!account.Id}</div>
+                  </th>
+                  <td data-label="Name">
+                      <div class="slds-truncate" title="{!account.Name}">{!account.Name}</div>
+                  </td>
+                  <td data-label="Phone">
+                      <div class="slds-truncate" title="{!account.Phone}">{!account.Phone}</div>
+                  </td>
+                  <td>
+                      <div class="slds-truncate" title="{!account.Type}">{!account.Type}</div>
+                  </td>
+                  <td>
+                      <lightning:button name="bt_OpenEditor" 
+                                        label="Edit Name" 
+                                        class = "slds-button_brand "
+                                        iconName="utility:edit" 
+                                        iconPosition="left" 
+                                        value="{!account}" 
+                                        onclick="{! c.openModel}"/>
+                  </td>
+                </tr>
+              </aura:iteration>
+          </tbody>
+        </table> 
+        &nbsp;
+    </div>
+    
+
+    <!-- EDITOR (modal dialog) --> 
+    
+    <aura:if isTrue="{!v.isOpen}">
+       
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Account Name Editor</h2>
+                </header>
+                
+                <!-- Dialog Body -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:input aura:id="editAccountForm" label="Name"
+                        name="name" value="{!v.targetAccount.Name}" required="true"/> 
+                </div>
+                
+                <!-- Dialog Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral" 
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModel }"/>
+                    <lightning:button variant="brand" 
+                                      label="Save"
+                                      title="Save"
+                                      onclick="{! c.saveAccount }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>         
+
+</aura:component>

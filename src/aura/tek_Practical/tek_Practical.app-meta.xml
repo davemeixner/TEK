@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>43.0</apiVersion>
+    <description>Test Project for TEK Systems Position
+
+Build a basic lightning component that can query a list of 10 most recently created accounts and display it using a lightning app. Make sure I can edit the account name.</description>
+</AuraDefinitionBundle>

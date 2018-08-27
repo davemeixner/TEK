@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{bdecae65-6134-4094-b595-ef60aba9b9d3}</ProjectGuid>
+    <Login>unclecal@mac.com</Login>
+    <Password>6g/0i/GYWWREKSuwXbCV98IkE+vOVl14Dthvrc8sFQQX0jiD9a9qQip77H+amfOH</Password>
+    <SecurityToken>i1RZ32EtIgN/uB7enH0NBFpWP0cIZStBqNuXXonsFaXCJBPrzlZdeA7Yb63PLBUEF9I4g/WvakIqe+x/mpnzhw==</SecurityToken>
+    <Domain />
+    <Environment>0</Environment>
+    <ApexVersion>42.0</ApexVersion>
+    <Name>TEK_Practical</Name>
+    <AssemblyName>TEK_Practical</AssemblyName>
+    <RootNamespace>TEK_Practical</RootNamespace>
+    <ProjectVersion>5</ProjectVersion>
+    <PackageVersion>1.12.11.4</PackageVersion>
+    <SyncOption>False</SyncOption>
+    <AntSupport>False</AntSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Folder Include="AnonymousApex" />
+    <Folder Include="Soql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aura/tek_AccountList/tek_AccountList.cmp">
+      <PhysicalRelativePath>src/aura/tek_AccountList/tek_AccountList.cmp</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Ad0V0000015KPDSA2</Id>
+      <LastModifiedDateUtcTicks>131798118910000000</LastModifiedDateUtcTicks>
+      <Hash>MTtlF/ViiTOrZAeuK6pZYg==</Hash>
+      <BundleName>tek_AccountList</BundleName>
+      <LightningType>Component</LightningType>
+    </Compile>
+    <Compile Include="aura/tek_AccountList/tek_AccountListController.js">
+      <PhysicalRelativePath>src/aura/tek_AccountList/tek_AccountListController.js</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Ad0V0000015KPNSA2</Id>
+      <LastModifiedDateUtcTicks>131798118840000000</LastModifiedDateUtcTicks>
+      <Hash>qkkaohhtTMBNxeZCXoGGSg==</Hash>
+      <BundleName>tek_AccountList</BundleName>
+      <LightningType>Controller</LightningType>
+    </Compile>
+    <Compile Include="aura/tek_AccountList/tek_AccountListHelper.js">
+      <PhysicalRelativePath>src/aura/tek_AccountList/tek_AccountListHelper.js</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Ad0V0000015KPhSAM</Id>
+      <LastModifiedDateUtcTicks>131798097440000000</LastModifiedDateUtcTicks>
+      <Hash>toVHVFjn+EHi1deOUVXGHQ==</Hash>
+      <BundleName>tek_AccountList</BundleName>
+      <LightningType>Helper</LightningType>
+    </Compile>
+    <Compile Include="aura/tek_Practical/tek_Practical.app">
+      <PhysicalRelativePath>src/aura/tek_Practical/tek_Practical.app</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Ad0V0000015KPISA2</Id>
+      <LastModifiedDateUtcTicks>131797988390000000</LastModifiedDateUtcTicks>
+      <Hash>YvQyQkYdfVE/2IhP6Pj4VQ==</Hash>
+      <BundleName>tek_Practical</BundleName>
+      <LightningType>Application</LightningType>
+    </Compile>
+    <Compile Include="aura/tek_Practical/tek_PracticalRenderer.js">
+      <PhysicalRelativePath>src/aura/tek_Practical/tek_PracticalRenderer.js</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Ad0V0000015KRxSAM</Id>
+      <LastModifiedDateUtcTicks>131797876860000000</LastModifiedDateUtcTicks>
+      <Hash>vxR9TqytMsSoL2OYRRLlsg==</Hash>
+      <BundleName>tek_Practical</BundleName>
+      <LightningType>Renderer</LightningType>
+    </Compile>
+    <Compile Include="classes/tek_AccountListApexController.cls">
+      <PhysicalRelativePath>src/classes/tek_AccountListApexController.cls</PhysicalRelativePath>
+      <SubType>Class</SubType>
+      <Id>01p0V000003nmDyQAI</Id>
+      <LastModifiedDateUtcTicks>131798100550000000</LastModifiedDateUtcTicks>
+      <Hash>Vw7pR9lrOAxcxKzqCw2eHw==</Hash>
+    </Compile>
+    <Compile Include="triggers/contactTrigger.trigger">
+      <PhysicalRelativePath>src/triggers/contactTrigger.trigger</PhysicalRelativePath>
+      <SubType>Trigger</SubType>
+      <Id>01q0V000001gzD0QAI</Id>
+      <LastModifiedDateUtcTicks>131798704310000000</LastModifiedDateUtcTicks>
+      <Hash>+HCDpeuaSxb71PrLOQrfRQ==</Hash>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="objects/Account.object">
+      <PhysicalRelativePath>src/objects/Account.object</PhysicalRelativePath>
+      <SubType>Object</SubType>
+      <Id>000000000000000AAA</Id>
+      <LastModifiedDateUtcTicks>131798742835534930</LastModifiedDateUtcTicks>
+      <Hash>Z5wn/VpbR2GGi8YVEtXl+w==</Hash>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="classes/tek_AccountListApexController.cls-meta.xml">
+      <PhysicalRelativePath>src/classes/tek_AccountListApexController.cls-meta.xml</PhysicalRelativePath>
+      <SubType>Metadata</SubType>
+      <LastModifiedDateUtcTicks>131798100550000000</LastModifiedDateUtcTicks>
+      <Hash>Zq3gQSxTZehdIucyITjunw==</Hash>
+      <PackageName />
+      <DependentUpon>classes/tek_AccountListApexController.cls</DependentUpon>
+    </None>
+    <None Include="triggers/contactTrigger.trigger-meta.xml">
+      <PhysicalRelativePath>src/triggers/contactTrigger.trigger-meta.xml</PhysicalRelativePath>
+      <SubType>Metadata</SubType>
+      <LastModifiedDateUtcTicks>131798704310000000</LastModifiedDateUtcTicks>
+      <Hash>sUc2BtUSadXrx0szH8VOvw==</Hash>
+      <PackageName />
+      <DependentUpon>triggers/contactTrigger.trigger</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Build.targets" />
+</Project>
